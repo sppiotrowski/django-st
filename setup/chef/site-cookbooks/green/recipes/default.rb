@@ -7,11 +7,12 @@ application "green" do
   packages ["git-core", "vim"]
 
   django do
-    packages ["Django"]
+    packages ["Django", "gunicorn"]
   end
 
   gunicorn do
     app_module :django
-    port 8080
+    port 8181
   end
+  
 end

@@ -1,0 +1,166 @@
+[default] Importing base box 'lucid32'...
+[default] [0K[default] Progress: 30%[default] [0K[default] Progress: 40%[default] [0K[default] Progress: 50%[default] [0K[default] Progress: 60%[default] [0K[default] Progress: 90%[default] [0K[default] The guest additions on this VM do not match the install version of
+VirtualBox! This may cause things such as forwarded ports, shared
+folders, and more to not work properly. If any of those things fail on
+this machine, please update the guest additions and repackage the
+box.
+
+Guest Additions Version: 4.2.0
+VirtualBox Version: 4.2.4
+[default] Matching MAC address for NAT networking...
+[default] Clearing any previously set forwarded ports...
+[default] Forwarding ports...
+[default] -- 22 => 2222 (adapter 1)
+[default] -- 8181 => 8181 (adapter 1)
+[default] Creating shared folders metadata...
+[default] Clearing any previously set network interfaces...
+[default] Booting VM...
+[default] Waiting for VM to boot. This can take a few minutes.
+[default] VM booted and ready for use!
+[default] Mounting shared folders...
+[default] -- v-root: /vagrant
+[default] -- v-csc-1: /tmp/vagrant-chef-1/chef-solo-1/cookbooks
+[default] -- v-csc-2: /tmp/vagrant-chef-1/chef-solo-2/cookbooks
+[default] Running provisioner: Vagrant::Provisioners::ChefSolo...
+[default] Generating chef JSON and uploading...
+[default] Running chef-solo...
+stdin: is not a tty
+[2013-01-02T09:44:20+01:00] INFO: *** Chef 10.14.2 ***
+[2013-01-02T09:44:22+01:00] INFO: Setting the run_list to ["recipe[green]"] from JSON
+[2013-01-02T09:44:22+01:00] INFO: Run List is [recipe[green]]
+[2013-01-02T09:44:22+01:00] INFO: Run List expands to [green]
+[2013-01-02T09:44:22+01:00] INFO: Starting Chef Run for lucid32.hsd1.ca.comcast.net.
+[2013-01-02T09:44:22+01:00] INFO: Running start handlers
+[2013-01-02T09:44:22+01:00] INFO: Start handlers complete.
+[2013-01-02T09:44:24+01:00] INFO: Application light-weight resource already initialized -- overriding!
+/opt/vagrant_ruby/lib/ruby/gems/1.8/gems/chef-10.14.2/bin/../lib/chef/resource.rb:768: warning: already initialized constant Application
+[2013-01-02T09:44:25+01:00] INFO: Processing application_python_django[green] action nothing (green::default line 110)
+[2013-01-02T09:44:25+01:00] INFO: Processing application_python_gunicorn[green] action nothing (green::default line 110)
+[2013-01-02T09:44:25+01:00] INFO: Processing application[green] action deploy (green::default line 1)
+[2013-01-02T09:44:25+01:00] INFO: Processing application_python_django[green] action before_compile (green::default line 110)
+[2013-01-02T09:44:25+01:00] INFO: Processing application_python_gunicorn[green] action before_compile (green::default line 110)
+[2013-01-02T09:44:26+01:00] INFO: Processing package[python] action install (python::package line 40)
+[2013-01-02T09:44:26+01:00] INFO: Processing package[python-dev] action install (python::package line 40)
+[2013-01-02T09:44:41+01:00] INFO: Processing remote_file[/tmp/vagrant-chef-1/distribute_setup.py] action create (python::pip line 33)
+[2013-01-02T09:44:41+01:00] INFO: remote_file[/tmp/vagrant-chef-1/distribute_setup.py] updated
+[2013-01-02T09:44:41+01:00] INFO: remote_file[/tmp/vagrant-chef-1/distribute_setup.py] mode changed to 644
+[2013-01-02T09:44:41+01:00] INFO: Processing execute[install-pip] action run (python::pip line 39)
+[2013-01-02T09:44:50+01:00] INFO: execute[install-pip] ran successfully
+[2013-01-02T09:44:50+01:00] INFO: Processing python_pip[virtualenv] action install (python::virtualenv line 23)
+[2013-01-02T09:44:51+01:00] INFO: Installing python_pip[virtualenv] version latest
+[2013-01-02T09:44:58+01:00] INFO: Processing python_pip[supervisor] action upgrade (supervisor::default line 22)
+[2013-01-02T09:44:58+01:00] INFO: Upgrading python_pip[supervisor] version from uninstalled to latest
+[2013-01-02T09:45:15+01:00] INFO: Processing directory[/etc/supervisor.d] action create (supervisor::default line 27)
+[2013-01-02T09:45:15+01:00] INFO: directory[/etc/supervisor.d] created directory /etc/supervisor.d
+[2013-01-02T09:45:15+01:00] INFO: directory[/etc/supervisor.d] owner changed to 0
+[2013-01-02T09:45:15+01:00] INFO: directory[/etc/supervisor.d] group changed to 0
+[2013-01-02T09:45:15+01:00] INFO: directory[/etc/supervisor.d] mode changed to 755
+[2013-01-02T09:45:15+01:00] INFO: Processing template[/etc/supervisord.conf] action create (supervisor::default line 33)
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/supervisord.conf] updated content
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/supervisord.conf] owner changed to 0
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/supervisord.conf] group changed to 0
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/supervisord.conf] mode changed to 644
+[2013-01-02T09:45:15+01:00] INFO: Processing directory[/var/log/supervisor] action create (supervisor::default line 45)
+[2013-01-02T09:45:15+01:00] INFO: directory[/var/log/supervisor] created directory /var/log/supervisor
+[2013-01-02T09:45:15+01:00] INFO: directory[/var/log/supervisor] owner changed to 0
+[2013-01-02T09:45:15+01:00] INFO: directory[/var/log/supervisor] group changed to 0
+[2013-01-02T09:45:15+01:00] INFO: directory[/var/log/supervisor] mode changed to 755
+[2013-01-02T09:45:15+01:00] INFO: Processing template[/etc/init.d/supervisor] action create (supervisor::default line 54)
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/init.d/supervisor] updated content
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/init.d/supervisor] owner changed to 0
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/init.d/supervisor] group changed to 0
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/init.d/supervisor] mode changed to 755
+[2013-01-02T09:45:15+01:00] INFO: Processing template[/etc/default/supervisor] action create (supervisor::default line 61)
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/default/supervisor] updated content
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/default/supervisor] owner changed to 0
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/default/supervisor] group changed to 0
+[2013-01-02T09:45:15+01:00] INFO: template[/etc/default/supervisor] mode changed to 644
+[2013-01-02T09:45:15+01:00] INFO: Processing service[supervisor] action enable (supervisor::default line 68)
+[2013-01-02T09:45:15+01:00] INFO: service[supervisor] enabled
+[2013-01-02T09:45:15+01:00] INFO: Processing service[supervisor] action start (supervisor::default line 68)
+[2013-01-02T09:45:17+01:00] INFO: service[supervisor] started
+[2013-01-02T09:45:17+01:00] INFO: Processing gunicorn_install[gunicorn-green] action install (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application_python/providers/gunicorn.rb line 32)
+[2013-01-02T09:45:17+01:00] INFO: Processing python_virtualenv[/srv/green/shared/env] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/gunicorn/providers/install.rb line 22)
+[2013-01-02T09:45:17+01:00] INFO: Creating virtualenv python_virtualenv[/srv/green/shared/env] at /srv/green/shared/env
+[2013-01-02T09:45:17+01:00] INFO: Processing execute[virtualenv --python=python  /srv/green/shared/env] action run (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/python/providers/virtualenv.rb line 32)
+[2013-01-02T09:45:17+01:00] INFO: execute[virtualenv --python=python  /srv/green/shared/env] ran successfully
+[2013-01-02T09:45:17+01:00] INFO: Processing python_pip[gunicorn] action install (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/gunicorn/providers/install.rb line 26)
+[2013-01-02T09:45:18+01:00] INFO: Installing python_pip[gunicorn] version latest
+[2013-01-02T09:45:23+01:00] INFO: Processing package[git-core] action install (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application/providers/default.rb line 69)
+[2013-01-02T09:46:01+01:00] INFO: Processing package[vim] action install (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application/providers/default.rb line 69)
+[2013-01-02T09:46:23+01:00] INFO: Processing directory[/srv/green] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application/providers/default.rb line 75)
+[2013-01-02T09:46:23+01:00] INFO: directory[/srv/green] owner changed to 1000
+[2013-01-02T09:46:23+01:00] INFO: directory[/srv/green] group changed to 1000
+[2013-01-02T09:46:23+01:00] INFO: Processing directory[/srv/green/shared] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application/providers/default.rb line 82)
+[2013-01-02T09:46:23+01:00] INFO: directory[/srv/green/shared] owner changed to 1000
+[2013-01-02T09:46:23+01:00] INFO: directory[/srv/green/shared] group changed to 1000
+[2013-01-02T09:46:23+01:00] INFO: Processing ruby_block[green before_deploy] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application/providers/default.rb line 107)
+[2013-01-02T09:46:23+01:00] INFO: Processing application_python_django[green] action before_deploy (green::default line 110)
+[2013-01-02T09:46:23+01:00] INFO: Processing application_python_gunicorn[green] action before_deploy (green::default line 110)
+[2013-01-02T09:46:23+01:00] INFO: ruby_block[green before_deploy] called
+[2013-01-02T09:46:23+01:00] INFO: Processing python_virtualenv[/srv/green/shared/env] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application_python/providers/django.rb line 101)
+[2013-01-02T09:46:23+01:00] INFO: Processing python_pip[Django] action install (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application_python/providers/django.rb line 107)
+[2013-01-02T09:46:23+01:00] INFO: Installing python_pip[Django] version latest
+[2013-01-02T09:47:27+01:00] INFO: Processing python_pip[gunicorn] action install (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application_python/providers/django.rb line 107)
+[2013-01-02T09:47:28+01:00] INFO: Processing template[/srv/green/shared/local_settings.py] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application_python/providers/django.rb line 118)
+[2013-01-02T09:47:28+01:00] INFO: template[/srv/green/shared/local_settings.py] updated content
+[2013-01-02T09:47:28+01:00] INFO: template[/srv/green/shared/local_settings.py] owner changed to 1000
+[2013-01-02T09:47:28+01:00] INFO: template[/srv/green/shared/local_settings.py] group changed to 1000
+[2013-01-02T09:47:28+01:00] INFO: template[/srv/green/shared/local_settings.py] mode changed to 644
+[2013-01-02T09:47:28+01:00] INFO: Processing gunicorn_config[/srv/green/shared/gunicorn_config.py] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application_python/providers/gunicorn.rb line 50)
+[2013-01-02T09:47:28+01:00] INFO: Creating gunicorn_config[/srv/green/shared/gunicorn_config.py] at /srv/green/shared/gunicorn_config.py
+[2013-01-02T09:47:28+01:00] INFO: Processing directory[/srv/green/shared] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/gunicorn/providers/config.rb line 34)
+[2013-01-02T09:47:28+01:00] INFO: Processing template[/srv/green/shared/gunicorn_config.py] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/gunicorn/providers/config.rb line 39)
+[2013-01-02T09:47:28+01:00] INFO: template[/srv/green/shared/gunicorn_config.py] updated content
+[2013-01-02T09:47:28+01:00] INFO: template[/srv/green/shared/gunicorn_config.py] mode changed to 644
+[2013-01-02T09:47:28+01:00] INFO: Processing supervisor_service[green] action enable (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application_python/providers/gunicorn.rb line 73)
+[2013-01-02T09:47:28+01:00] INFO: Processing execute[supervisorctl update] action nothing (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/supervisor/providers/service.rb line 22)
+[2013-01-02T09:47:28+01:00] INFO: Processing template[/etc/supervisor.d/green.conf] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/supervisor/providers/service.rb line 27)
+[2013-01-02T09:47:28+01:00] INFO: template[/etc/supervisor.d/green.conf] updated content
+[2013-01-02T09:47:28+01:00] INFO: template[/etc/supervisor.d/green.conf] owner changed to 0
+[2013-01-02T09:47:28+01:00] INFO: template[/etc/supervisor.d/green.conf] group changed to 0
+[2013-01-02T09:47:28+01:00] INFO: template[/etc/supervisor.d/green.conf] mode changed to 644
+[2013-01-02T09:47:28+01:00] INFO: template[/etc/supervisor.d/green.conf] sending run action to execute[supervisorctl update] (immediate)
+[2013-01-02T09:47:28+01:00] INFO: Processing execute[supervisorctl update] action run (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/supervisor/providers/service.rb line 22)
+[2013-01-02T09:47:28+01:00] INFO: execute[supervisorctl update] ran successfully
+[2013-01-02T09:47:28+01:00] INFO: Processing deploy_revision[green] action deploy (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application/providers/default.rb line 122)
+[2013-01-02T09:47:29+01:00] INFO: deploy_revision[green] cloning repo https://github.com/sppiotrowski/django-st.git to /srv/green/shared/cached-copy
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] checked out branch: master reference: e130c7f0975fa0c75e3b1051fba69cb6c0b02ec4
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] running callback before_migrate
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] running callback before_symlink
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] created directories before symlinking: 
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] updated symlinks
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] running callback before_restart
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] restarting app with embedded recipe
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] running callback after_restart
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] deployed to /srv/green
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] set user to vagrant
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] set group to vagrant
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] copied the cached checkout to /srv/green/releases/e130c7f0975fa0c75e3b1051fba69cb6c0b02ec4
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] set user to vagrant
+[2013-01-02T09:47:32+01:00] INFO: deploy_revision[green] set group to vagrant
+[2013-01-02T09:47:32+01:00] INFO: Processing application_python_django[green] action before_migrate (green::default line 110)
+[2013-01-02T09:47:32+01:00] INFO: Processing application_python_gunicorn[green] action before_migrate (green::default line 110)
+[2013-01-02T09:47:33+01:00] INFO: deploy_revision[green] made pre-migration symlinks
+[2013-01-02T09:47:33+01:00] INFO: Processing application_python_django[green] action before_symlink (green::default line 110)
+[2013-01-02T09:47:33+01:00] INFO: Processing application_python_gunicorn[green] action before_symlink (green::default line 110)
+[2013-01-02T09:47:33+01:00] INFO: Processing ruby_block[remove_run_migrations] action create (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application_python/providers/django.rb line 81)
+[2013-01-02T09:47:33+01:00] INFO: ruby_block[remove_run_migrations] called
+[2013-01-02T09:47:33+01:00] INFO: deploy_revision[green] purged directories in checkout 
+[2013-01-02T09:47:33+01:00] INFO: deploy_revision[green] linked shared paths into current release: 
+[2013-01-02T09:47:33+01:00] INFO: deploy_revision[green] made pre-migration symlinks
+[2013-01-02T09:47:34+01:00] INFO: deploy_revision[green] set user to vagrant
+[2013-01-02T09:47:34+01:00] INFO: deploy_revision[green] set group to vagrant
+[2013-01-02T09:47:34+01:00] INFO: deploy_revision[green] linked release /srv/green/releases/e130c7f0975fa0c75e3b1051fba69cb6c0b02ec4 into production at /srv/green/current
+[2013-01-02T09:47:34+01:00] INFO: deploy_revision[green] set user to vagrant
+[2013-01-02T09:47:34+01:00] INFO: deploy_revision[green] set group to vagrant
+[2013-01-02T09:47:34+01:00] INFO: Processing application_python_django[green] action before_restart (green::default line 110)
+[2013-01-02T09:47:34+01:00] INFO: Processing application_python_gunicorn[green] action before_restart (green::default line 110)
+[2013-01-02T09:47:34+01:00] INFO: Processing supervisor_service[green] action restart (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/application_python/providers/gunicorn.rb line 73)
+[2013-01-02T09:47:34+01:00] INFO: Processing application_python_django[green] action after_restart (green::default line 110)
+[2013-01-02T09:47:34+01:00] INFO: Processing application_python_gunicorn[green] action after_restart (green::default line 110)
+[2013-01-02T09:47:34+01:00] INFO: Processing execute[supervisorctl restart green] action run (/tmp/vagrant-chef-1/chef-solo-1/cookbooks/supervisor/providers/service.rb line 63)
+[2013-01-02T09:47:35+01:00] INFO: execute[supervisorctl restart green] ran successfully
+[2013-01-02T09:47:35+01:00] INFO: Chef Run complete in 192.558955 seconds
+[2013-01-02T09:47:35+01:00] INFO: Running report handlers
+[2013-01-02T09:47:35+01:00] INFO: Report handlers complete
